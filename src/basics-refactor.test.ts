@@ -1,3 +1,4 @@
+//@vitest-environment jsdom
 import { assertType, describe, expect, expectTypeOf, it } from "vitest";
 import { Equal, Expect } from "./helpers/type-utils";
 
@@ -10,7 +11,7 @@ Llegeix l'article:
 
 describe("Problema de nombres", () => {
   it("Ha de sumar els dos nombres", () => {
-    const addTwoNumbers = (a, b) => {
+    const addTwoNumbers = (a: number, b: number) => {
       return a + b;
     };
     expectTypeOf(addTwoNumbers).parameter(0).toBeNumber();
