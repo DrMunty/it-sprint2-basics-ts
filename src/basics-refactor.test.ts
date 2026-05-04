@@ -251,33 +251,33 @@ Has de solucionar aquest error de tipus esbrinant com representar arrays.
    });
  });
 
-// /*
-// Repte 9:
-// Has d'esbrinar com actualitzar l'anotació del tipus de retorn perquè TypeScript estigui satisfet.
-// */
+ /*
+ Repte 9:
+ Has d'esbrinar com actualitzar l'anotació del tipus de retorn perquè TypeScript estigui satisfet.
+ */
 
-// describe("Problema de promeses", () => {
-//   interface LukeSkywalker {
-//     name: string;
-//     height: string;
-//     mass: string;
-//     hair_color: string;
-//     skin_color: string;
-//     eye_color: string;
-//     birth_year: string;
-//     gender: string;
-//   }
+ describe("Problema de promeses", () => {
+   interface LukeSkywalker {
+     name: string;
+     height: string;
+     mass: string;
+     hair_color: string;
+     skin_color: string;
+     eye_color: string;
+     birth_year: string;
+     gender: string;
+   }
 
-//   const fetchLukeSkywalker = async (): LukeSkywalker => {
-//     const data = await fetch("https://swapi.py4e.com/api/people/1").then(
-//       (res) => {
-//         return res.json();
-//       }
-//     );
+   const fetchLukeSkywalker = async (): Promise <LukeSkywalker> => {
+     const data = await fetch("https://swapi.py4e.com/api/people/1").then(
+       (res) => {
+         return res.json();
+       }
+     );
 
-//     return data;
-//   };
-// });
+     return data;
+   };
+ });
 
 // /*
 // Repte 10:
