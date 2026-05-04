@@ -24,29 +24,30 @@ Repte 2:
 Descobreix com tipar params com un objecte amb una clau first que sigui un nombre i una clau second que també sigui un nombre.
 */
 
-// describe("Problema de paràmetre objecte", () => {
-//   it("Ha de sumar els dos nombres", () => {
-//     const addTwoNumbers = (params:{first:number,second:number}) => {
-//       return params.first + params.second;
-//     };
-//     expect(
-//       addTwoNumbers({
-//         first: 2,
-//         second: 4,
-//       })
-//     ).toEqual(6);
+describe("Problema de paràmetre objecte", () => {
+  const addTwoNumbers = (params: { first: number; second: number }) => {
+      return params.first + params.second;
+    };
+  it("Ha de sumar els dos nombres", () => {
+    
+    expect(
+      addTwoNumbers({
+        first: 2,
+        second: 4,
+      }),
+    ).toEqual(6);
 
-//     expect(
-//       addTwoNumbers({
-//         first: 10,
-//         second: 20,
-//       })
-//     ).toEqual(30);
-//   });
-//   expectTypeOf(addTwoNumbers).parameter(0).toBeObject({first:number,second:number});
-
-
-// });
+    expect(
+      addTwoNumbers({
+        first: 10,
+        second: 20,
+      }),
+    ).toEqual(30);
+      expectTypeOf(addTwoNumbers)
+    .parameter(0)
+    .toEqualTypeOf<{ first: number; second: number }>();
+  });
+});
 
 // /*
 // Repte 3:
@@ -504,18 +505,17 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
 //         firstName: string;
 //         lastName: string;
 //       }
-      
+
 //       const createThenGetUser = async (
 //         createUser: unknown,
 //         getUser: unknown,
 //       ): Promise<User> => {
 //         const userId: string = await createUser();
-      
+
 //         const user = await getUser(userId);
-      
+
 //         return user;
 //       };
-      
 
 //   it("Ha de crear l'usuari i després obtenir-lo", async () => {
 //     const user = await createThenGetUser(
@@ -542,4 +542,3 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
 // type tests = [Expect<Equal<MyFuncReturn, string>>];
 // Pista: pots utilitzar typeof per obtenir el tipus d'una variable o funció.
 // */
-
