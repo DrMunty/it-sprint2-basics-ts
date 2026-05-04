@@ -139,35 +139,35 @@ Repte 5:
    });
  });
 
-// /*
-// Repte 6:
-// Actualitza la interfície User per restringir la propietat role a una de les opcions establertes.
-// El valor I_SHOULD_NOT_BE_ALLOWED hauria de provocar un error, eliminant la línia vermella sota el comentari // @ts-expect-error.
-// */
-// describe("Problema d'unions", () => {
-//   interface User {
-//     id: number;
-//     firstName: string;
-//     lastName: string;
-//     /**
-//      * Com ens assegurem que role només sigui un dels següents:
-//      * - 'admin'
-//      * - 'user'
-//      * - 'super-admin'
-//      */
-//     role: string;
-//   }
+ /*
+ Repte 6:
+ Actualitza la interfície User per restringir la propietat role a una de les opcions establertes.
+ El valor I_SHOULD_NOT_BE_ALLOWED hauria de provocar un error, eliminant la línia vermella sota el comentari // @ts-expect-error.
+ */
+ describe("Problema d'unions", () => {
+   interface User {
+     id: number;
+     firstName: string;
+     lastName: string;
+     /**
+      * Com ens assegurem que role només sigui un dels següents:
+      * - 'admin'
+      * - 'user'
+      * - 'super-admin'
+      */
+     role: 'admin' | 'user' | 'super-admin';
+   }
 
-//   const defaultUser: User = {
-//     id: 1,
-//     firstName: "Jen",
-//     lastName: "Simmons",
-//     // @ts-expect-error
-//     role: "I_SHOULD_NOT_BE_ALLOWED",
-//   };
-// });
+   const defaultUser: User = {
+     id: 1,
+     firstName: "Jen",
+     lastName: "Simmons",
+     // @ts-expect-error
+     role: "I_SHOULD_NOT_BE_ALLOWED",
+   };
+ });
 
-// /*
+ /*
 // Repte 7:
 // Has de solucionar aquest error de tipus esbrinant com representar arrays.
 // */
