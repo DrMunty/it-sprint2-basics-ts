@@ -204,43 +204,52 @@ Has de solucionar aquest error de tipus esbrinant com representar arrays.
  });
 
  /*
-// Repte 8:
-// Anota la funció makeUser perquè sempre retorni un User.
-// */
-// describe("Problema d'anotacions de tipus de retorn de funció", () => {
-//   interface User {
-//     id: number;
-//     firstName: string;
-//     lastName: string;
-//     role: "admin" | "user" | "super-admin";
-//     posts: Array<Post>;
-//   }
+ Repte 8:
+ Anota la funció makeUser perquè sempre retorni un User.
+ */
+ describe("Problema d'anotacions de tipus de retorn de funció", () => {
+   interface User {
+     id: number;
+     firstName: string;
+     lastName: string;
+     role: "admin" | "user" | "super-admin";
+     posts: Array<Post>;
+   }
 
-//   interface Post {
-//     id: number;
-//     title: string;
-//   }
+   interface Post {
+     id: number;
+     title: string;
+   }
 
-//   /**
-//    * Com ens assegurem que makeUser SEMPRE
-//    * retorni un usuari?
-//    */
-//   const makeUser = () => {
-//     return {};
-//   };
+   /**
+    * Com ens assegurem que makeUser SEMPRE
+    * retorni un usuari?
+    */
+   const makeUser = (): User => {
+     return {
+     id: 2345,
+     firstName: "Albert",
+     lastName: "Muntal",
+     role: "super-admin",
+     posts: [{
+      id: 1,
+      title: "This is hard"
+     }],
+     };
+   };
 
-//   it("Ha de retornar un usuari vàlid", () => {
-//     const user = makeUser();
+   it("Ha de retornar un usuari vàlid", () => {
+     const user = makeUser();
 
-//     expect(user.id).toBeTypeOf("number");
-//     expect(user.firstName).toBeTypeOf("string");
-//     expect(user.lastName).toBeTypeOf("string");
-//     expect(user.role).to.be.oneOf(["super-admin", "admin", "user"]);
+     expect(user.id).toBeTypeOf("number");
+     expect(user.firstName).toBeTypeOf("string");
+     expect(user.lastName).toBeTypeOf("string");
+     expect(user.role).to.be.oneOf(["super-admin", "admin", "user"]);
 
-//     expect(user.posts[0].id).toBeTypeOf("number");
-//     expect(user.posts[0].title).toBeTypeOf("string");
-//   });
-// });
+     expect(user.posts[0].id).toBeTypeOf("number");
+     expect(user.posts[0].title).toBeTypeOf("string");
+   });
+ });
 
 // /*
 // Repte 9:
