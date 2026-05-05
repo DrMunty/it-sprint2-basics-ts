@@ -279,33 +279,34 @@ Has de solucionar aquest error de tipus esbrinant com representar arrays.
    };
  });
 
-// /*
-// Repte 10:
-// Actualitza guitarists perquè estigui tipat com un Set de strings.
-// */
+ /*
+ Repte 10:
+ Actualitza guitarists perquè estigui tipat com un Set de strings.
+ */
 
-// describe("Problema de Set", () => {
-//   const guitarists = new Set();
+ describe("Problema de Set", () => {
+   const guitarists = new Set<string>();
 
-//   guitarists.add("Jimi Hendrix");
-//   guitarists.add("Eric Clapton");
+   guitarists.add("Jimi Hendrix");
+   guitarists.add("Eric Clapton");
+   
 
-//   it("Ha de contenir en Jimi i l'Eric", () => {
-//     expect(guitarists.has("Jimi Hendrix")).toEqual(true);
-//     expect(guitarists.has("Eric Clapton")).toEqual(true);
-//   });
+   it("Ha de contenir en Jimi i l'Eric", () => {
+     expect(guitarists.has("Jimi Hendrix")).toEqual(true);
+     expect(guitarists.has("Eric Clapton")).toEqual(true);
+   });
 
-//   it("Ha de donar un error de tipus si proves d'afegir un valor que no sigui string", () => {
-//     // @ts-expect-error
-//     guitarists.add(2);
-//   });
+   it("Ha de donar un error de tipus si proves d'afegir un valor que no sigui string", () => {
+     // @ts-expect-error
+     guitarists.add(6);
+   });
 
-//   it("Ha d'estar tipat com un array de strings", () => {
-//     const guitaristsAsArray = Array.from(guitarists);
+   it("Ha d'estar tipat com un array de strings", () => {
+     const guitaristsAsArray = Array.from(guitarists);
 
-//     type tests = [Expect<Equal<typeof guitaristsAsArray, string[]>>];
-//   });
-// });
+     type tests = [Expect<Equal<typeof guitaristsAsArray, string[]>>];
+   });
+ });
 
 // /*
 // Repte 11:
