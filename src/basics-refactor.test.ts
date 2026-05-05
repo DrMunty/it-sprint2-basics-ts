@@ -562,6 +562,10 @@ Repte 15:
 // Repte:
 // Llegeix la documentació de TypeScript sobre Utility Types i esbrina com utilitzar ReturnType per extreure el tipus de retorn de myFunc.
 // Actualitza el codi perquè el següent test passi:
-// type tests = [Expect<Equal<MyFuncReturn, string>>];
+const myFunc = () => {
+  return "hello";
+};
+type MyFuncReturn = ReturnType<typeof myFunc>;
+type tests = [Expect<Equal<MyFuncReturn, string>>];
 // Pista: pots utilitzar typeof per obtenir el tipus d'una variable o funció.
 // */
