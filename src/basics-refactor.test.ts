@@ -357,7 +357,13 @@ Has de solucionar aquest error de tipus esbrinant com representar arrays.
  */
 
  describe("Problema de filtratge amb typeof", () => {
-   const coerceAmount = (amount: number | { amount: number }) => {};
+   const coerceAmount = (amount: number | { amount: number }) => {
+    if (typeof amount === 'number'){
+      return amount;
+    } else {
+      return amount.amount;
+    }
+   };
 
    it("Ha de retornar l'import quan es passa un objecte", () => {
      expect(coerceAmount({ amount: 20 })).toEqual(20);
