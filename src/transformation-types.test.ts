@@ -278,39 +278,39 @@ import { Equal, Expect } from "./helpers/type-utils";
    ];
  });
 
-// /*
-// Repte 12:
-// Extreu el tipus del discriminador d'una discriminated union.
-// */
-// describe("Transformació: obtenir el tipus del discriminador d'una discriminated union", () => {
-//   type Event =
-//     | {
-//         type: "click";
-//         event: MouseEvent;
-//       }
-//     | {
-//         type: "focus";
-//         event: FocusEvent;
-//       }
-//     | {
-//         type: "keydown";
-//         event: KeyboardEvent;
-//       };
+ /*
+ Repte 12:
+ Extreu el tipus del discriminador d'una discriminated union.
+ */
+ describe("Transformació: obtenir el tipus del discriminador d'una discriminated union", () => {
+   type Event =
+     | {
+         type: "click";
+         event: MouseEvent;
+       }
+     | {
+         type: "focus";
+         event: FocusEvent;
+       }
+     | {
+         type: "keydown";
+         event: KeyboardEvent;
+       };
 
-//   type EventType = unknown;
+   type EventType = Event["type"]
 
-//   type tests = [Expect<Equal<EventType, "click" | "focus" | "keydown">>];
-// });
+   type tests = [Expect<Equal<EventType, "click" | "focus" | "keydown">>];
+ });
 
-// /* 
-// Repte 13:
-// Utilitza l'array per resoldre els dos tipus: 
-// - AppleOrBanana, que ha de ser una unió dels dos primers valors de l'array ("apple" | "banana").
-// - Fruit, que ha de ser una unió de tots els valors de l'array ("apple" | "banana" | "orange").
+ /* 
+ Repte 13:
+ Utilitza l'array per resoldre els dos tipus: 
+ - AppleOrBanana, que ha de ser una unió dels dos primers valors de l'array ("apple" | "banana").
+ - Fruit, que ha de ser una unió de tots els valors de l'array ("apple" | "banana" | "orange").
 
-// Llegeix la secció sobre Indexed Access Types de la documentació de TypeScript, per resoldre l'ercicici
-// Pista
-// Pots utilitzar l'operador typeof per obtenir el tipus de l'array i després accedir als seus valors amb l'índex [number] o amb una tupla d'índexs específics.
+ Llegeix la secció sobre Indexed Access Types de la documentació de TypeScript, per resoldre l'ercicici
+ Pista
+ Pots utilitzar l'operador typeof per obtenir el tipus de l'array i després accedir als seus valors amb l'índex [number] o amb una tupla d'índexs específics.
 //  */
 
 // describe("Transformació: obtenir el tipus a partir d'un array de valors", () => {
