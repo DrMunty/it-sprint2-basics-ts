@@ -184,12 +184,12 @@ import { Equal, Expect } from "./helpers/type-utils";
    ];
  });
 
-// /*
-// Repte 9:
-// Dona un exemple de terminologia: union, discriminated union i enum.
-// */
-// describe("Transformació: terminologia de tipus", () => {
-//   /**
+ /*
+ Repte 9:
+ Dona un exemple de terminologia: union, discriminated union i enum.
+ */
+ describe("Transformació: terminologia de tipus", () => {
+   /**
 //    * És important entendre la terminologia sobre unions:
 //    *
 //    * Una de les declaracions de tipus següents és una union.
@@ -199,28 +199,28 @@ import { Equal, Expect } from "./helpers/type-utils";
 //    * Quina és quina?
 //    */
 
-//   type A =
-//     | {
-//         type: "a";
-//         a: string;
-//       }
-//     | {
-//         type: "b";
-//         b: string;
-//       }
-//     | {
-//         type: "c";
-//         c: string;
-//       };
+   type A = // discriminated union
+     | {
+         type: "a";
+         a: string;
+       }
+     | {
+         type: "b";
+         b: string;
+       }
+     | {
+         type: "c";
+         c: string;
+       };
 
-//   type B = "a" | "b" | "c";
+   type B = "a" | "b" | "c"; // union
 
-//   enum C {
-//     A = "a",
-//     B = "b",
-//     C = "c",
-//   }
-// });
+   enum C { // enum
+     A = "a",
+     B = "b",
+     C = "c",
+   }
+ });
 
 // /*
 // Repte 10:
