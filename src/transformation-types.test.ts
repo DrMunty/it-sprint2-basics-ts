@@ -91,33 +91,36 @@ import { Equal, Expect } from "./helpers/type-utils";
    type tests = [Expect<Equal<TestingFramework, "vitest" | "jest" | "mocha">>];
  });
 
-// /*
-// Repte 5:
-// Utilitza indexed access types per obtenir el tipus d'una propietat concreta d'un objecte.
-// */
-// describe("Transformació: indexed access amb objectes", () => {
-//   const fakeDataDefaults = {
-//     String: "Default string",
-//     Int: 1,
-//     Float: 1.14,
-//     Boolean: true,
-//     ID: "id",
-//   };
+ /*
+ Repte 5:
+ Utilitza indexed access types per obtenir el tipus d'una propietat concreta d'un objecte.
+ */
 
-//   type StringType = unknown;
-//   type IntType = unknown;
-//   type FloatType = unknown;
-//   type BooleanType = unknown;
-//   type IDType = unknown;
+ describe("Transformació: indexed access amb objectes", () => {
+   const fakeDataDefaults = {
+     String: "Default string",
+     Int: 1,
+     Float: 1.14,
+     Boolean: true,
+     ID: "id",
+   };
 
-//   type tests = [
-//     Expect<Equal<StringType, string>>,
-//     Expect<Equal<IntType, number>>,
-//     Expect<Equal<FloatType, number>>,
-//     Expect<Equal<BooleanType, boolean>>,
-//     Expect<Equal<IDType, string>>,
-//   ];
-// });
+   type FakeData = typeof fakeDataDefaults;
+   
+   type StringType = FakeData["String"];
+   type IntType = FakeData["Int"];
+   type FloatType = FakeData["Float"];
+   type BooleanType = FakeData["Boolean"];
+   type IDType = FakeData["ID"];
+
+   type tests = [
+     Expect<Equal<StringType, string>>,
+     Expect<Equal<IntType, number>>,
+     Expect<Equal<FloatType, number>>,
+     Expect<Equal<BooleanType, boolean>>,
+     Expect<Equal<IDType, string>>,
+   ];
+ });
 
 // /*
 // Repte 6:
